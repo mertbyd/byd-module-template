@@ -1,5 +1,4 @@
 using Localization.Resources.AbpUi;
-using Byd.CoreExtensions;
 using MyCompanyName.MyProjectName.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
@@ -10,8 +9,7 @@ namespace MyCompanyName.MyProjectName;
 
 [DependsOn(
     typeof(MyProjectNameApplicationContractsModule),
-    typeof(AbpAspNetCoreMvcModule),
-    typeof(CoreExtensionsHttpApiModule))]
+    typeof(AbpAspNetCoreMvcModule))]
 public class MyProjectNameHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
