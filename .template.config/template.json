@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mert Ali Baydemir",
+  "classifications": [
+    "ABP",
+    "Module"
+  ],
+  "identity": "Byd.ModuleTemplate",
+  "name": "Byd ABP Module",
+  "shortName": "byd-module",
+  "sourceName": "ModuleTemplate",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "forms": {
+    "withoutPrefix": {
+      "identifier": "replace",
+      "pattern": "^Intern",
+      "replacement": ""
+    },
+    "wordsWithUnderscore": {
+      "identifier": "replace",
+      "pattern": "([a-z0-9])([A-Z])",
+      "replacement": "$1_$2"
+    },
+    "lowerInvariant": {
+      "identifier": "lowerCaseInvariant"
+    },
+    "schemaName": {
+      "identifier": "chain",
+      "steps": [
+        "withoutPrefix",
+        "wordsWithUnderscore",
+        "lowerInvariant"
+      ]
+    }
+  },
+  "symbols": {
+    "moduleSchema": {
+      "type": "derived",
+      "valueSource": "name",
+      "valueTransform": "schemaName",
+      "replaces": "module_template"
+    },
+    "httpsPort": {
+      "type": "generated",
+      "generator": "port",
+      "parameters": {
+        "low": 44350,
+        "high": 44399
+      },
+      "replaces": "44332"
+    }
+  },
+  "guids": [
+    "c2d31439-b723-48e2-b061-5ebd7aeb6010",
+    "2e701e62-0953-4dd3-910b-dc6cc93ccb0d"
+  ],
+  "sources": [
+    {
+      "exclude": [
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        "**/Logs/**",
+        ".template.config/**/*",
+        "**/*.user",
+        "**/*.lock.json",
+        ".git/**",
+        ".idea/**",
+        ".vs/**",
+        "README.md",
+        "**/appsettings*.json"
+      ]
+    }
+  ]
+}

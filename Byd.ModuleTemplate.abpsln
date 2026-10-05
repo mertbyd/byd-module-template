@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "Byd.ModuleTemplate": {
+      "path": "Byd.ModuleTemplate.abpmdl"
+    }
+  }
+}
